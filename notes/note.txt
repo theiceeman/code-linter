@@ -1,0 +1,22 @@
+/usr/bin/env node
+
+chmod +x src/index.js - 
+chmod is for changing file permissions.
+Specifically, this command adds execute permissions to the file.(making it executable)
+
+
+npm link:
+used to link a package to the local global npm.
+you can add your package to local npm using this without needing to push to online npm.
+
+
+"bin" key is used to specify executable files associated with a Node.js package. 
+  "bin": {
+    "your-command-name": "./path-to-your-executable-file.js"
+  },
+
+to run the package
+> your-command-name arg1 arg2
+
+
+https://resources.jointjs.com/demos/rappid/apps/Ast/index.html

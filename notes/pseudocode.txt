@@ -1,0 +1,14 @@
+
+-> for whitespacing
+check for strings like: const, let, var, class function
+if found 
+make sure there is a \n\n before it 
+if not add a \n\n before the string.
+
+-> making variables camecase[enforceCamelCase].
+    check for VariableDeclaration
+    store their name in state
+    convert the name to camelcase 
+    traverse the remaining tree 
+    if the expression.left.name is in state
+    update name to its camelcase equivalent.

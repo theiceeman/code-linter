@@ -1,0 +1,21 @@
+THIS WILL BE A VSCODE EXTENSION.
+WORKS ON JS FILES.
+
+never use var for variables, use let
+
+use const for variables that never get reassigned
+
+always use single quotes 
+
+use camel case for all variables 
+
+add more cases from airbnb styleguide
+
+keep line breaks 
+keep comments 
+keep spaces 
+put semicolons automatically 
+report missing semicolons 
+
+write tests
+on compilation, list all changes it made to code in green.
