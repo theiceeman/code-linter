@@ -12,3 +12,17 @@ if not add a \n\n before the string.
     traverse the remaining tree 
     if the expression.left.name is in state
     update name to its camelcase equivalent.
+
+-> retaining comments 
+    for one-line comments (//)
+        split string by \n and group into an array
+        loop thru array and check for //
+        if found:
+            store in global state [string, index]
+
+    for adding comments back(code)
+        convert code to array 
+        loop thru global state
+        for each entry  
+            get its index
+            

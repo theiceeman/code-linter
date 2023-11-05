@@ -136,7 +136,6 @@ export default class SyntaxTreeProcessor {
             nodeDeclaration
         })
 
-
         return
 
     }
@@ -170,10 +169,13 @@ export default class SyntaxTreeProcessor {
 
 
 
-    process(ast) {
+
+
+    process(ast, code) {
         this.#traverse(ast)
         this.#checkDeclarationThatNeverChanged()
         this.#enforceCamelCase(ast)
+        // this.#handleComments(ast, code)
         return [...this.#errors.values()];
     }
 }

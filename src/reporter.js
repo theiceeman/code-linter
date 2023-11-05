@@ -2,11 +2,12 @@ import chalk from "chalk";
 import fs from 'fs'
 import path from 'path'
 import * as astring from 'astring'
-import stringProcessor from './stringProcessor'
+import StringProcessor from './stringProcessor.js'
 
 export default class Reporter {
 
-    static report({ errors, ast, outputFilePath }) {
+    static report({ errors, ast, outputFilePath, prevCode }) {
+
         errors
             .sort((err1, err2) => {
                 const [aLine, aColumn] = err1.errorLocation.split(":").slice(1);
@@ -19,8 +20,13 @@ export default class Reporter {
                 const finalMessage = `${errorMessage}\n${chalk.grey(errorLocation)}`
                 // console.error(finalMessage);
             });
-        let updatedCode = astring.generate(ast)
-        updatedCode = new stringProcessor().handleWhitespaces(updatedCode);
+
+        let updatedCode = astring.generate(ast, {
+            // comments: true,
+        })
+        updatedCode = StringProcessor.handleWhitespaces(updatedCode);
+        // updatedCode = new StringProcessor().handleComments(prevCode, updatedCode)
+        updatedCode = new StringProcessor().handle_comments(ast, updatedCode)
 
         fs.writeFileSync(outputFilePath, updatedCode, 'utf-8')
 

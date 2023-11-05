@@ -2,12 +2,10 @@ THIS WILL BE A VSCODE EXTENSION.
 WORKS ON JS FILES.
 
 never use var for variables, use let
-
 use const for variables that never get reassigned
-
 always use single quotes 
-
 use camel case for all variables 
+add whitespace for readability
 
 add more cases from airbnb styleguide
 
